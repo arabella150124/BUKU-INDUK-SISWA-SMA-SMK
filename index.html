@@ -15,13 +15,13 @@
     <link id="pwa-manifest" rel="manifest" href="">
     
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         
         :root {
             --bg-body: #f4f6f9;
             --primary: #1e3a8a; /* Deep Navy Blue for Senior High / Vocational */
             --accent: #2563eb;  /* Tailwind Blue 600 */
-            --glass-bg: rgba(255, 255, 255, 0.90);
+            --glass-bg: rgba(255, 255, 255, 0.92);
             --glass-border: rgba(226, 232, 240, 0.8);
         }
 
@@ -34,7 +34,7 @@
 
         .glass {
             background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--glass-border); box-shadow: 0 8px 32px 0 rgba(30, 58, 138, 0.05);
+            border: 1px solid var(--glass-border); box-shadow: 0 8px 32px 0 rgba(30, 58, 138, 0.08);
         }
 
         .glass-card {
@@ -111,34 +111,115 @@
 <body>
 
 <div id="app-wrapper">
-    <!-- LOGIN VIEW -->
-    <div id="login-view" class="w-full h-full flex items-center justify-center p-4" style="background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);">
-        <div class="glass w-full max-w-md p-8 rounded-2xl relative shadow-xl">
-            <div class="text-center mb-8">
-                <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 text-blue-700">
-                    <i class="fas fa-graduation-cap text-3xl"></i>
+    <!-- LOGIN VIEW WITH UNSPLASH BACKGROUND & INFORMATIONAL PANEL -->
+    <div id="login-view" class="w-full h-full flex items-center justify-center p-4 lg:p-8 overflow-y-auto" style="background: linear-gradient(rgba(15, 23, 42, 0.78), rgba(30, 58, 138, 0.88)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat fixed;">
+        <div class="max-w-5xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center my-auto py-6">
+            
+            <!-- PANEL INFORMASI BUKU INDUK DIGITAL (LEFT COLUMN) -->
+            <div class="lg:col-span-7 text-white space-y-6 px-2 lg:px-4">
+                <div class="inline-flex items-center gap-2 bg-blue-500/30 backdrop-blur-md px-3.5 py-1.5 rounded-full text-blue-200 text-xs font-semibold border border-blue-400/30">
+                    <i class="fas fa-shield-halved text-blue-400"></i> Modernisasi Master Data Kesiswaan SMA/SMK
                 </div>
-                <h2 class="text-2xl font-bold text-gray-800">Buku Induk SMA / SMK</h2>
-                <p class="text-xs text-blue-600 font-semibold tracking-wide mt-1 uppercase">Sistem Informasi Master Data Kesiswaan</p>
+                
+                <div>
+                    <h1 class="text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-white drop-shadow-md">
+                        Sistem Informasi Buku Induk Digital
+                    </h1>
+                    <p class="text-blue-100/90 text-sm lg:text-base mt-2 leading-relaxed font-normal">
+                        Platform terintegrasi pengelolaan arsip permanen kesiswaan, nilai rapor, Praktik Kerja Lapangan (PKL DUDI), serta Uji Kompetensi Keahlian (UKK) berbasis cloud.
+                    </p>
+                </div>
+
+                <!-- CARDS BENEFIT INFORMASI -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                    <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/15 hover:bg-white/15 transition">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-300 text-lg mb-3">
+                            <i class="fas fa-box-archive"></i>
+                        </div>
+                        <h3 class="font-bold text-sm text-white">Keamanan Arsip Permanen</h3>
+                        <p class="text-xs text-blue-100/80 mt-1 leading-normal">
+                            Melindungi riwayat data historis siswa dari risiko fisik kebakaran, kebanjiran, dan pelapukan berkas fisik kertas.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/15 hover:bg-white/15 transition">
+                        <div class="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-300 text-lg mb-3">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="font-bold text-sm text-white">Verifikasi Alumni Instan</h3>
+                        <p class="text-xs text-blue-100/80 mt-1 leading-normal">
+                            Mempercepat proses legalisir dan verifikasi keabsahan Ijazah/Transkrip Nilai alumni secara efisien.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/15 hover:bg-white/15 transition">
+                        <div class="w-10 h-10 rounded-lg bg-amber-500/20 flex items-center justify-center text-amber-300 text-lg mb-3">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h3 class="font-bold text-sm text-white">Rekapitulasi PKL & UKK</h3>
+                        <p class="text-xs text-blue-100/80 mt-1 leading-normal">
+                            Pencatatan rekam jejak Sertifikasi BNSP, LSP, dan riwayat magang industri DUDI bagi jenjang SMK.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/15 hover:bg-white/15 transition">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-300 text-lg mb-3">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <h3 class="font-bold text-sm text-white">Proteksi Pemalsuan QR</h3>
+                        <p class="text-xs text-blue-100/80 mt-1 leading-normal">
+                            Setiap lembar buku induk dilengkapi dengan kode QR verifikasi unik untuk keamanan identitas siswa.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 text-xs text-blue-200/80 pt-2">
+                    <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-emerald-400"></i> Kurikulum Merdeka / K13</span>
+                    <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-emerald-400"></i> Import & Export Excel</span>
+                    <span class="flex items-center gap-1.5"><i class="fas fa-check-circle text-emerald-400"></i> Cetak Siap Cetak</span>
+                </div>
             </div>
 
-            <div class="flex border-b border-gray-200 mb-6">
-                <button onclick="toggleLoginTab('admin')" id="tab-admin" class="flex-1 py-2 text-center font-semibold text-blue-600 border-b-2 border-blue-600">Admin/Guru</button>
-                <button onclick="toggleLoginTab('siswa')" id="tab-siswa" class="flex-1 py-2 text-center font-semibold text-gray-500">Siswa / Alumni</button>
+            <!-- FORM LOGIN CARD (RIGHT COLUMN) -->
+            <div class="lg:col-span-5">
+                <div class="glass w-full p-8 rounded-2xl relative shadow-2xl bg-white/95 backdrop-blur-xl border border-white/40">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-blue-100/80 rounded-2xl flex items-center justify-center mx-auto mb-3 text-blue-700 shadow-inner">
+                            <i class="fas fa-graduation-cap text-3xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900">Buku Induk Digital</h2>
+                        <p class="text-xs text-blue-600 font-semibold tracking-wider mt-1 uppercase">SMA / SMK Negeri & Swasta</p>
+                    </div>
+
+                    <div class="flex border-b border-gray-200 mb-6 bg-gray-100/80 p-1 rounded-xl">
+                        <button onclick="toggleLoginTab('admin')" id="tab-admin" class="flex-1 py-2 text-center text-xs font-semibold text-blue-600 bg-white rounded-lg shadow-sm transition">Admin/Guru</button>
+                        <button onclick="toggleLoginTab('siswa')" id="tab-siswa" class="flex-1 py-2 text-center text-xs font-semibold text-gray-500 rounded-lg transition">Siswa / Alumni</button>
+                    </div>
+
+                    <form id="form-login" onsubmit="handleLogin(event)">
+                        <div class="input-group">
+                            <label id="lbl-username" class="text-xs font-semibold text-gray-700">Email Admin</label>
+                            <input type="text" id="login-username" class="input-control" required placeholder="admin@sekolah.sch.id">
+                        </div>
+                        <div class="input-group">
+                            <label class="text-xs font-semibold text-gray-700">Password / PIN</label>
+                            <input type="password" id="login-password" class="input-control" required placeholder="••••••••">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-full mt-2 py-2.5 shadow-lg shadow-blue-500/30" id="btn-login-submit">
+                            <i class="fas fa-right-to-bracket mr-1"></i> Masuk Sistem
+                        </button>
+                        <div id="login-error" class="text-red-500 text-xs mt-3 text-center hidden font-medium bg-red-50 p-2 rounded"></div>
+                    </form>
+
+                    <!-- INFORMASI AKSES DEMO -->
+                    <div class="mt-6 pt-4 border-t border-gray-100 text-[11px] text-gray-500 text-center">
+                        <p class="font-semibold text-gray-700 mb-1">Akses Mode Percobaan (Demo):</p>
+                        <p><strong>Admin:</strong> <code class="bg-gray-100 px-1 py-0.5 rounded text-blue-700">admin@sekolah.sch.id</code> / <code class="bg-gray-100 px-1 py-0.5 rounded text-blue-700">admin</code></p>
+                        <p class="mt-0.5"><strong>Siswa:</strong> <code class="bg-gray-100 px-1 py-0.5 rounded text-blue-700">21221001</code> / PIN: <code class="bg-gray-100 px-1 py-0.5 rounded text-blue-700">123456</code></p>
+                    </div>
+                </div>
             </div>
 
-            <form id="form-login" onsubmit="handleLogin(event)">
-                <div class="input-group">
-                    <label id="lbl-username">Email Admin</label>
-                    <input type="text" id="login-username" class="input-control" required placeholder="admin@sekolah.sch.id">
-                </div>
-                <div class="input-group">
-                    <label>Password / PIN</label>
-                    <input type="password" id="login-password" class="input-control" required placeholder="••••••••">
-                </div>
-                <button type="submit" class="btn btn-primary w-full mt-4" id="btn-login-submit">Masuk Sistem</button>
-                <div id="login-error" class="text-red-500 text-sm mt-3 text-center hidden"></div>
-            </form>
         </div>
     </div>
 
@@ -631,8 +712,17 @@
 
     window.toggleLoginTab = (mode) => {
         loginMode = mode;
-        document.getElementById('tab-admin').className = mode === 'admin' ? "flex-1 py-2 text-center font-semibold text-blue-600 border-b-2 border-blue-600" : "flex-1 py-2 text-center font-semibold text-gray-500";
-        document.getElementById('tab-siswa').className = mode === 'siswa' ? "flex-1 py-2 text-center font-semibold text-blue-600 border-b-2 border-blue-600" : "flex-1 py-2 text-center font-semibold text-gray-500";
+        const tabAdmin = document.getElementById('tab-admin');
+        const tabSiswa = document.getElementById('tab-siswa');
+        
+        if (mode === 'admin') {
+            tabAdmin.className = "flex-1 py-2 text-center text-xs font-semibold text-blue-600 bg-white rounded-lg shadow-sm transition";
+            tabSiswa.className = "flex-1 py-2 text-center text-xs font-semibold text-gray-500 rounded-lg transition";
+        } else {
+            tabSiswa.className = "flex-1 py-2 text-center text-xs font-semibold text-blue-600 bg-white rounded-lg shadow-sm transition";
+            tabAdmin.className = "flex-1 py-2 text-center text-xs font-semibold text-gray-500 rounded-lg transition";
+        }
+        
         document.getElementById('lbl-username').innerText = mode === 'admin' ? "Email Admin" : "NIS Siswa / Alumni";
         document.getElementById('login-username').placeholder = mode === 'admin' ? "admin@sekolah.sch.id" : "Contoh: 21221001";
     };
@@ -739,7 +829,7 @@
 
         try {
             if (loginMode === 'admin') {
-                if (IS_PREVIEW) { if (u==='admin@sekolah.sch.id' || u==='admin') { userRole='admin'; proceedLogin(); } else throw new Error("Gunakan admin / admin"); }
+                if (IS_PREVIEW) { if (u==='admin@sekolah.sch.id' || u==='admin') { userRole='admin'; proceedLogin(); } else throw new Error("Gunakan admin@sekolah.sch.id / admin"); }
                 else { await signInWithEmailAndPassword(auth, u, p); userRole = 'admin'; proceedLogin(); }
             } else {
                 let siswa = null;
@@ -756,7 +846,7 @@
             }
         } catch (error) {
             err.innerText = error.message || error; err.classList.remove('hidden');
-            document.getElementById('btn-login-submit').innerText = 'Masuk Sistem';
+            document.getElementById('btn-login-submit').innerHTML = '<i class="fas fa-right-to-bracket mr-1"></i> Masuk Sistem';
         }
     };
 
@@ -776,7 +866,7 @@
         if(html5QrCode && html5QrCode.isScanning) html5QrCode.stop().then(() => html5QrCode.clear());
         document.getElementById('main-view').classList.add('hidden');
         document.getElementById('login-view').classList.remove('hidden');
-        document.getElementById('btn-login-submit').innerText = 'Masuk Sistem';
+        document.getElementById('btn-login-submit').innerHTML = '<i class="fas fa-right-to-bracket mr-1"></i> Masuk Sistem';
         document.getElementById('login-password').value = '';
     };
 
